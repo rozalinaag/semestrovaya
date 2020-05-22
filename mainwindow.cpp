@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->angle->setMaximum(90); //ограничения угла и скорости
-    ui->speed->setMaximum(50);
+    ui->speed->setMaximum(45);
 
     graphic = ui->widget;
     //составление графика
@@ -41,7 +41,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::printGraphic(int speed, int angle, double distance, double height, double Fsopr,double mas){
-    QVector<double> x(1000), y(1000);
+    QVector<double> x(3000), y(3000);
 
     double Fsopr_x=Fsopr*cos(angle*PI/180); //силы сопротивления для х и у
     double Fsopr_y=Fsopr*sin(angle*PI/180);
@@ -49,19 +49,21 @@ void MainWindow::printGraphic(int speed, int angle, double distance, double heig
 
     double maxAxis = 0,
            value = 0,
-            step=1/1000;
+            step=distance/1000;
            //step =distance / 1000;
 
     //x[0]=0;
-    double time = step;
-    for (int i=0;i < 1000;i++)
+    double time = 0;
+    for (int i=0;i < 3000;i++)
     {
       //x[i] = value;
       //y[i] = x[i] * tan(angle * PI / 180) - (G / (2 * pow(speed, 2) * pow(cos(angle * PI / 180), 2))) * pow(x[i], 2);
-        x[i]=speed*cos(angle*PI/180)*time+Fsopr_x*time*time/(2*mas);
-        y[i]=speed*sin(angle*PI/180)*time-(G-Fsopr_y)*time*time/(2*mas);
+        x[i]=(speed*(cos(angle*PI/180))*time)-(Fsopr_x*time*time)/(2*mas);
+        y[i]=(speed*(sin(angle*PI/180))*time)-((G+Fsopr_y)*(time*time))/(2*mas);
        //value+=step;
-        ui->coffec->setNum(x[i]); //вывод силы сопротивления
+        qDebug()<<x[i]; //вывод силы сопротивления
+        qDebug()<<y[i];
+        qDebug()<<(time);
       time += step;
     }
 
