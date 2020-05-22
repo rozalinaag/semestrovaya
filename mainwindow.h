@@ -18,7 +18,7 @@ public:
 
 private slots:
     void on_buttonStart_clicked();
-    void printGraphic(int speed, int angle, double distance, double height,double Fsopr,double mas);
+    void printGraphic(int speed, int angle, double distance, double height,double coff,double mas);
 
     void on_action_triggered();
 
