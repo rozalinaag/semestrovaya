@@ -4,6 +4,7 @@
 #include <cmath>
 #include "./qcustomplot.h"
 #include<QPixmap>
+#include "teoria.h"
 #define PI 3.14159265
 #define G 9.8
 
@@ -116,4 +117,21 @@ void MainWindow::on_action_3_triggered()
    {
        QApplication::quit();
    }
+}
+
+void MainWindow::on_action_9_triggered()
+{
+    Teoria win;
+    win.setModal(true);
+    win.exec();
+}
+
+void MainWindow::on_action_8_triggered()
+{
+    ui->statusbar->showMessage("Сохранено!");
+}
+
+void MainWindow::on_action_7_triggered()
+{
+    ui->statusbar->showMessage("Сохранено!");
 }

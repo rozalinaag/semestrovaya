@@ -387,7 +387,7 @@
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
-     <string>Теория</string>
+     <string>Цель</string>
     </property>
     <addaction name="action_9"/>
    </widget>
@@ -404,7 +404,7 @@
     <string>Создать новый</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+R</string>
+    <string>Ctrl+E</string>
    </property>
   </action>
   <action name="action_2">
@@ -427,15 +427,24 @@
    <property name="text">
     <string>Сохранить как</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
   </action>
   <action name="action_8">
    <property name="text">
     <string>Сохранить</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
   </action>
   <action name="action_9">
    <property name="text">
-    <string>Прочитать теорию</string>
+    <string>Узнать нашу цель</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
    </property>
   </action>
  </widget>

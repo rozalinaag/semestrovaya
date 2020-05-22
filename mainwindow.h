@@ -26,6 +26,12 @@ private slots:
 
     void on_action_3_triggered();
 
+    void on_action_9_triggered();
+
+    void on_action_8_triggered();
+
+    void on_action_7_triggered();
+
 private:
     Ui::MainWindow *ui;
     QCustomPlot *graphic;      // Объявляем объект QCustomPlot
